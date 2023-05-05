@@ -28,9 +28,11 @@ body {
 }
 
 .logo-img {
-    width: 80px;
+    width: 100%;
+    max-width: 70px;
     height: auto;
     margin-right: 15px;
+    padding-top: 5px;
 }
 
 .logo-text > a {
@@ -74,6 +76,7 @@ body {
 }
 
 .button > a {
+    align-items: center;
     background-color: #49A840;
     width: 137px;
     display: inline-block;
@@ -86,6 +89,114 @@ body {
 
 .button > a:hover {
     background-color: #005B32;
+}
+
+.sidebar {
+    display: none;
+}
+
+.sidebar > ul > li {
+    list-style: none;
+}
+
+.sidebar > ul > li > a {
+    color: #005B32;
+    font-size: 18px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.hamburger {
+    display: none;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #101010;
+}
+
+.hamburger {
+    display: none;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #101010;
+}
+
+@media only screen and (max-width: 768px) {
+    .logo {
+        margin-left: 20px;
+    }
+
+    .header {
+        position: fixed;
+        z-index: 111;
+    }
+
+    .navbar {
+        display: none;
+    }
+
+    .sidebar {
+        display: block;
+        position: fixed;
+        right: -50%;
+        top: 5rem;
+        flex-direction: column;
+        background-color: #fff;
+        width: 50%;
+        height: 100vh;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow:
+            0 10px 27px rgba(0, 0, 0, 0.1);
+    }
+
+    .sidebar > ul {
+        margin: 0;
+    }
+
+    .sidebar.active {
+        right: 0;
+    }
+
+    .nav-item {
+        margin: 2.5rem 0;
+    }
+
+    .hamburger {
+        margin-top: 20px;
+        margin-right: 25px;
+        display: block;
+        cursor: pointer;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .button {
+        display: none;
+    }
 }
 
 /* Hero Section */
@@ -123,6 +234,16 @@ body {
     line-height: 1.5;
 }
 
+@media only screen and (max-width: 768px) {
+    .hero-text {
+        top: 30%;
+    }
+
+    .main-text {
+        font-size: 37px;
+    }
+}
+
 /* Strains Section */
 
 .strains {
@@ -142,7 +263,6 @@ body {
 }
 
 .description {
-    font-family: 'Roboto', sans-serif;
     font-weight: 400;
     font-size: 18px;
     padding-bottom: 30px;
@@ -151,6 +271,7 @@ body {
 .card-holder {
     width: 85%;
     display: flex;
+    flex-wrap: wrap;
     margin: auto;
     justify-content: space-between;
 }
@@ -163,6 +284,8 @@ body {
     box-shadow: rgba(0, 0, 0, 0.50) 0px 3px 8px;
     text-align: center;
     align-items: center;
+    flex: 0 1 calc(25% - 10px);
+    margin-bottom: 20px;
 }
 
 .strain-img {
@@ -190,6 +313,20 @@ body {
 
 .link:hover {
     color: #005B32;
+}
+
+@media only screen and (max-width: 768px)  {
+    .strains {
+        width: 90%;
+        margin: 0 auto;
+    }
+    .header-text {
+        font-size: 22px;
+    }
+
+    .description {
+        font-size: 15px;
+    }
 }
 
 /* Quote Section */
@@ -234,6 +371,21 @@ body {
 .img-container > img {
     width: 390px;
     height: auto;
+}
+
+@media only screen and (max-width: 768px) {
+    .img-container {
+        display: none;
+    }
+
+    .text-content > h2 {
+        font-size: 23px;
+    }
+
+    .text-content > p{
+        font-size: 16px;
+        padding-bottom: 40px;
+    }
 }
 
 /* Products Section */
@@ -425,7 +577,7 @@ body {
 }
 
 .company-img {
-    width: 60%;
+    width: 70%;
     display: flex;
     margin: auto;
     justify-content: space-between;
@@ -436,6 +588,27 @@ body {
     border-radius: 50%;
     margin-right: 20px;
     box-shadow: rgba(0, 0, 0, 0.50) 0px 5px 8px;
+}
+
+@media only screen and (max-width: 768px) {
+    .companies {
+        width: 85%;  
+        margin: 0 auto;
+    }
+
+    .company-header {
+        font-size: 22px;
+    }
+
+    .company-img {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .company-img > a > img {
+        width: 55px;
+        margin: 0;
+    }
 }
 
 /* About Section */
@@ -489,6 +662,38 @@ body {
 .container-right > img {
     padding-top: 20px;
     width: 500px;
+}
+
+@media only screen and (max-width: 768px) {
+    .wrapper {
+        flex-direction: column-reverse;
+        flex-wrap: wrap;
+    }
+
+    .container-left {
+        padding: 0;
+    }
+
+    .container-left > p {
+        font-size: 15px;
+        text-align: justify;
+    }
+
+    .about-button {
+        margin-top: 5px;
+    }
+
+    .about-button > a {
+        width: 170px;
+        font-size: 15px;
+        padding: 17px 0;
+    }
+
+    .container-right > img {
+        padding-top: 0;
+        padding-bottom: 30px;
+        width: 100%;
+    }
 }
 
 /* Blog Section */
@@ -577,6 +782,57 @@ body {
     color: #005B32;
 }
 
+@media only screen and (max-width: 768px) {
+    .main-blog {
+        width: 90%;
+    }
+    .main-blog > img {
+        width: 150px;
+    }
+
+    .name {
+        margin-top: 0;
+        font-size: 10px;
+    }
+
+    .blog1 {
+        padding: 15px 20px;
+    }
+
+    .heading {
+        font-size: 23px;
+        margin: 0;
+        margin-bottom: 5px;
+    }
+
+    .link1 {
+        font-size: 11px;
+    }
+
+    .sub-post {
+        margin-top: 15px;
+        width: 90%;
+        flex-wrap: wrap;
+    }
+
+    .sub-post1 {
+        width: 100%;
+    }
+
+    .sub-post1:nth-child(2) {
+        margin-top: 15px;
+    }
+
+    .sub-post-header {
+        font-size: 18px;
+    }
+
+    .sub-post-body {
+        font-size: 15px;
+        padding: 0;
+    }
+}
+
 /* FAQs Section */
 
 .faqs {
@@ -615,6 +871,26 @@ body {
 
 .faqs-button > a:hover {
     background-color: #005B32;
+}
+
+@media only screen and (max-width: 768px) {
+    .faqs {
+        width: 100%;
+    }
+
+    .container-left2 > img {
+        display: none;
+    }
+
+    .faqs-button > a {
+        width: 170px;
+        font-size: 15px;
+        padding: 17px 0;
+    }
+
+    .container-right2 {
+        padding: 0 20px;
+    }
 }
 
 /* Contact Section */
@@ -672,9 +948,10 @@ body {
     display: inline-block;
     border-radius: 5px;
     text-align: center;
-    padding: 19px 0;
+    padding: 16px 0;
     color: #fff;
     text-decoration: none;
+    font-size: 17px;
 }
 
 .signup-button > a:hover {
@@ -717,6 +994,40 @@ body {
     width: 100%;
 }
 
+@media only screen and (max-width: 768px) {
+    .body {
+        flex-wrap: wrap;
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+        padding: 0;
+    }
+
+    .right > h2 {
+        font-size: 20px;
+    }
+
+    .right > p {
+        font-size: 20px;
+    }
+
+    .left {
+        padding-top: 15px;
+    }
+
+    .signup-button > a {
+        width: 170px;
+        font-size: 15px;
+        padding: 17px 0;
+    }
+
+    .contact-button > a {
+        width: 170px;
+        font-size: 15px;
+        padding: 17px 0;
+    }
+}
+
 /* Footer Section */
 
 .footer {
@@ -735,9 +1046,13 @@ body {
     margin: 0;
 }
 
+.left-links {
+    text-align: center;
+}
+
 .left-links > a {
     display: inline-block;
-    margin: 0 45px;
+    margin: 0 0 0 60px;
     text-decoration: none;
     color: #005B32;
     font-weight: 700;
@@ -747,9 +1062,17 @@ body {
     color: #49A840;
 }
 
+.left-links, .right-links {
+    flex-basis: 30%;
+}
+
+.right-links {
+    text-align: center;
+}
+
 .right-links > a {
     display: inline-block;
-    margin: 0 45px;
+    margin: 0 60px 0 0;
     text-decoration: none;
     color: #005B32;
     font-weight: 700;
@@ -798,6 +1121,37 @@ hr {
     color: #005B32;
 }
 
+@media only screen and (max-width: 768px) {
+    .top {
+        /* flex-wrap: wrap; */
+        flex-direction: column-reverse;
+        width: 100%;
+    }
+
+    .top > .logo {
+        order: 1;
+    }
+
+    .left-links, .right-links {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .left-links {
+        order: 1;
+        float: left;
+    }
+
+    .left-links > a {
+        margin-left: 0;
+        margin-right: 15px;
+    }
+
+    .right-links > a {
+        margin-right: 15px;
+    }
+}
+
 footer {
     width: 100%;
     background-color: #EBF7ED;
@@ -810,3 +1164,4 @@ footer > p {
     font-family: 'Work Sans', sans-serif;
     font-size: 15px;
 }
+
